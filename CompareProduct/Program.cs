@@ -13,12 +13,23 @@ namespace CompareProduct
             list.Add(new Product("Celular", 1000));
             list.Add(new Product("Mouse", 200));
 
-            list.Sort();
+            /*
+             * usando lambda para criar um metodo delagate comparison
+             */
+            Comparison<Product> comp = (p1, p2) => p1.Name.ToUpper().CompareTo(p2.Name.ToUpper());
+
+            //list.Sort(CompareProducts);
+            list.Sort(comp);
 
             foreach(var line in list)
             {
                 Console.WriteLine(line);
             }
+        }
+
+        static int CompareProducts(Product p1 , Product p2)
+        {
+            return p1.Name.ToUpper().CompareTo(p2.Name.ToUpper());
         }
     }
 }

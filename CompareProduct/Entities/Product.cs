@@ -4,7 +4,7 @@ using System.Globalization;
 
 namespace CompareProduct.Entities
 {
-    class Product  : IComparable<Product>
+    class Product  
     {
         public string Name { get; set; }
         public double Price { get; set; }
@@ -22,9 +22,9 @@ namespace CompareProduct.Entities
         /*
          * Interface compareTo que ordena pelo nome
          */
-        public int CompareTo(Product other)
-        {
-            return Name.ToUpper().CompareTo(other.Name.ToUpper());
-        }
+     //   public int CompareTo(Product other)
+     //   {
+     //       return Name.ToUpper().CompareTo(other.Name.ToUpper());
+     //   }
     }
 }
